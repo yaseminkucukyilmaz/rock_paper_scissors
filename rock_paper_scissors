@@ -1,0 +1,44 @@
+import time
+import random
+
+SeninPuanin = 0
+BilgisayarPuani = 0
+
+while True:
+    sec = input("taş,kağıt veya makastan birini seç: ")
+    if sec == "taş" or sec == "kağıt" or sec == "makas":
+
+        bilgisayar = random.randint(1, 3)
+        if bilgisayar == 1:
+            bilgisayar = "taş"
+        elif bilgisayar == 2:
+            bilgisayar = "kağıt"
+        else:
+            bilgisayar = "makas"
+
+        print("Bilgisayar seçim yapıyor, lütfen bekleyiniz...")
+        time.sleep(3)
+        print("Bilgisayar",bilgisayar,"seçti!")
+    
+        if bilgisayar == sec:
+            print("Beraberlik! Kimse puan almadı!")
+            print("Sen = ",SeninPuanin,"Bilgisayar =",BilgisayarPuani)
+        elif bilgisayar == "taş" and sec == "kağıt":
+            print("Kazandınız!")
+            SeninPuanin = SeninPuanin + 1
+            print( "Sen =",SeninPuanin,"Bilgisayar =",BilgisayarPuani)
+        elif bilgisayar == "kağıt" and sec == "makas":
+            print("Kazandınız!")
+            SeninPuanin = SeninPuanin + 1
+            print( "Sen =",SeninPuanin,"Bilgisayar =",BilgisayarPuani)
+        elif bilgisayar == "makas" and sec == "taş":
+            print("Kazandınız!")
+            SeninPuanin = SeninPuanin + 1
+            print( "Sen =",SeninPuanin,"Bilgisayar =",BilgisayarPuani)
+        else:
+            print("Kaybettiniz!")
+            BilgisayarPuani = BilgisayarPuani + 1
+            print( "Sen =",SeninPuanin,"Bilgisayar =",BilgisayarPuani)
+
+    else:
+        print("Lütfen girdiğiniz metni kontrol edin, bir hata var.")
